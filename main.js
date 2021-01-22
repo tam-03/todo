@@ -50,7 +50,7 @@ const todoApp = new Vue({
     this.todos = todoStorage.fetch()
   },
   methods: {
-    doAdd: function (event, value) {
+    add: function (event, value) {
       const comment = this.$refs.comment
       if (!comment.value.length) {
         return
@@ -62,10 +62,10 @@ const todoApp = new Vue({
       })
       comment.value = ''
     },
-    doChangeState: function (item) {
+    changeState: function (item) {
       item.state = item.state ? 0 : 1
     },
-    doRemove: function (item) {
+    remove: function (item) {
       const index = this.todos.indexOf(item)
       this.todos.splice(index, 1)
     }

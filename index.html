@@ -27,14 +27,14 @@
                 <tr v-for="item in computedTodos" :key="item.id">
                     <th>{{ item.id }}</th>
                     <td>{{ item.comment }}</td>
-                    <td class="state"><button @click="doChangeState(item)">{{ labels[item.state] }}</button></td>
-                    <td class="button"> <button @click.meta="doRemove(item)">削除</button></td>
+                    <td class="state"><button @click="changeState(item)">{{ labels[item.state] }}</button></td>
+                    <td class="button"> <button @click.meta="remove(item)">削除</button></td>
                 </tr>
             </tbody>
         </table>
         <p>削除は、metaキー(mac→(⌘) | Windows→(⊞))を押しながら行って下さい。</p>
         <h2>作業を追加</h2>
-        <form class="add-form" @submit.prevent="doAdd">
+        <form class="add-form" @submit.prevent="add">
             <input type="text" ref="comment">
             <button type="submit">追加</button>
         </form>
